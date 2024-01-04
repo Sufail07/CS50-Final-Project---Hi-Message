@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="/static/loginstyles.css">
+{% endblock %}
+
+{% block nav %}
+
+
+<li class="nav-item">
+  <a class="nav-link" id="register-link" href="/login">Login</a>
+</li>
+
+
+
+{% endblock %}
+
+
+{% block main %}
+    <div class="header">
+        <div>HI<span>&nbsp;Message!</span></div>
+    </div>
+    <br>
+    <form action="/register" method="post" class="login">
+            <input type="text" placeholder="Enter your username" name="username" autocomplete="off"><br>
+            <input type="password" placeholder="Enter your password" name="password">
+            <input type="password" placeholder="Confirm your password" name="password_confirmation">
+            <button type="submit" id="submit_button">Submit</button>
+    </form>
+    <div class="password_error">{{ error }}</div>
+</div>
+
+
+
+{% endblock %}
+
+

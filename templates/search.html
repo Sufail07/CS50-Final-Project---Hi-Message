@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+{% block title %}
+Search
+{% endblock %}
+{% block stylesheet %}
+<link rel="stylesheet" href="/static/searchstyle.css">
+{% endblock %}
+
+
+{% block main %}
+<main>
+
+
+  <div id="container">
+    <form action="/search" method="post">
+      <!-- Username input-->
+      <div class="form-outline mb-4">
+        <label class="form-label" for="form4Example2">Username</label>
+        <input type="text" id="form4Example2" class="form-control" autocomplete="off" name="username">
+      </div>
+      <!-- Subject input -->
+      <div class="form-outline mb-4">
+        <label class="form-label" for="form4Example2">Subject</label>
+        <input type="text" id="form4Example2" class="form-control" autocomplete="off" name="subject">
+      </div>
+    
+      <!-- Message input -->
+      <div class="form-outline mb-4">
+        <label class="form-label" for="form4Example3">Message</label>
+        <textarea class="form-control" id="form4Example3" rows="4" autocomplete="off" name="message"></textarea>
+      </div>
+    
+      <!-- Submit button -->
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary btn-block mb-4" id="submitButton">
+          Search
+        </button>
+      </div>
+    </form>
+  </div>
+
+  {% if sent == "Message sent" %}
+    <div id="sent_message">{{ sent }}</div>
+    <div id="error_message"></div>
+  {% else %}
+  <div id="sent_message"></div>
+  <div class="error mx-auto mt-4">
+    <div id="error_message" class="mx-auto">
+      {{ error }}
+    </div>
+  </div>
+  {% endif %}
+</div>
+
+
+
+
+
+</main>
+<script src="/static/scripts/search_found.js"></script>
+{% endblock %}

@@ -1,0 +1,33 @@
+body {
+  overflow: hidden;
+}
+
+main {
+  height: 100vh;
+  width: 100vw;
+}
+
+#container {
+  padding: 18px;
+}
+
+#error_message {
+  color: red;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+#submitButton {
+  width: 120px;
+}
+
+.error {
+  display: flex;
+  justify-content: center;
+}
+
+#error_message {
+  font-size: large;
+}

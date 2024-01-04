@@ -1,0 +1,54 @@
+body {
+    overflow: hidden;
+    font-family: "Arial";
+}
+
+.usernameAndTime {
+    display: flex;
+}
+
+h4 {
+    position: relative;
+    top: -2px;
+}
+main {
+    height: 100vh;
+    width: 100vw;
+    background-image: url(https://i.pinimg.com/originals/38/a0/4a/38a04a7b051c9481ccf55bfa439f242f.jpg);
+    position: fixed;
+}
+
+#text-container {
+    position: relative;
+    top: 40%;
+}
+
+button[type=submit] {
+    cursor: pointer;
+}
+
+
+#container {
+    width: 80vw;
+    height: 80vh;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 18px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    justify-content: center;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 1.5px );
+    -webkit-backdrop-filter: blur( 1.5px );
+    border: 1px solid white;
+    color: white;
+}
+
+#mail {
+    font-size: 1.5rem;
+    margin-left: 20%;
+    position: relative;
+    top: 10%;
+
+}

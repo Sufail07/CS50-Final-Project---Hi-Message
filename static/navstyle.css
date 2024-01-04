@@ -1,0 +1,8 @@
+.navbar-brand, .nav-link {
+	padding: 8px;
+	margin-left: 10px;
+}
+
+#register-link {
+	font-size: 1.5rem;
+}

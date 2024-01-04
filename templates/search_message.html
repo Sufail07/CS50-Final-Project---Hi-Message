@@ -1,0 +1,82 @@
+{% extends "layout.html"%}
+
+{% block title %}
+Search message
+{% endblock %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="search_message.css">
+{% endblock %}
+
+{% block main %}
+<main>
+  <section>
+    <div class="container mt-4">
+        <form action="/search_message" method="post">
+          <!-- Username input-->
+          <div class="form-outline mb-4">
+            <label class="form-label" for="form4Example2">Username</label>
+            <input type="text" id="form4Example2" class="form-control" autocomplete="off" name="username">
+          </div>
+          <!-- Message input -->
+          <div class="form-outline mb-4">
+            <label class="form-label" for="form4Example3">Message</label>
+            <textarea class="form-control" id="form4Example3" rows="1" autocomplete="off" name="message"></textarea>
+          </div>
+        
+          <!-- Submit button -->
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary btn-block mb-4" id="submitButton">
+              Send
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="mail">
+      <table class="table table-responsive table-striped table-dark">
+        <thead class="thead-dark">
+          <tr>
+              <th>Username</th>
+              <th>Subject</th>
+              <th>Time</th>
+              <th>View Message</th>
+          </tr>
+      </thead>
+      <tbody>
+        {% for detail in mails %}
+            <tr>
+                <td>{{ detail["sender"] }}</td>
+                <td>{{ detail["subject"] }}</td>
+                <td>{{ detail["time"] }}</td>
+                <td id="view-button">
+                    <form action="/viewMail" method="post">
+                        <input type="hidden" value={{ detail["id"] }} name="mailID">
+                        <button type="submit" class="btn btn-success">View</button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+      </tbody>
+      </table>
+
+      </table>
+
+
+    </section>
+
+
+
+
+
+
+
+</main>
+{% endblock %}
+
+{% block script %}
+
+<script src="/static/scripts/search_message.js"></script>
+
+{% endblock %}

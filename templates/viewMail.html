@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="/static/mailstyle.css">
+{% endblock %}
+
+{% block main %}
+<main>
+<div id="container">
+    <div class="usernameAndTime">
+        Username : &nbsp;
+        <h4 id="sender_name">{{ mailDetails["sender"] }}</h4> <br>
+    </div>
+    <div class="usernameAndTime">
+        Time : &nbsp;
+        <h4 id="sender_name">{{ mailDetails["time"] }}</h4> <br><br>
+    </div>
+
+    <p id="mail">
+        {{ mailDetails["message"] }}
+    </p>
+
+</div>
+
+</main>
+
+
+{% endblock %}

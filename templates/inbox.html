@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+{% block title %}
+    | Inbox
+{% endblock %}
+{% block stylesheet %}
+    <link rel="stylesheet" href="/static/inboxstyle.css">
+{% endblock %}
+
+{% block main %}
+<main>
+    {% if from_details %}
+    <section>
+        <!--for demo wrap-->
+        <div class="tbl-header">
+          <table cellpadding="0" cellspacing="0" border="0">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Subject</th>
+                    <th>Time</th>
+                    <th>View Message</th>
+                </tr>
+            </thead>
+          </table>
+        </div>
+        <div class="tbl-content">
+          <table cellpadding="0" cellspacing="0" border="0">
+            <tbody>
+                {% for detail in from_details %}
+                    <tr>
+                        <td>{{ detail["sender"] }}</td>
+                        <td>{{ detail["subject"] }}</td>
+                        <td>{{ detail["time"] }}</td>
+                        <td id="view-button">
+                            <form action="/viewMail" method="post">
+                                <input type="hidden" value={{ detail["id"] }} name="mailID">
+                                <button type="submit" class="btn btn-success">View</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+        </table>
+    </div>
+</section>
+    {% else %}
+
+        <div id="no_messages">You have no messages</div>
+
+    {% endif %}
+    
+
+</main>
+{% endblock %}
+
+
+

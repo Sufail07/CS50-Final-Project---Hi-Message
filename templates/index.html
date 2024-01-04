@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    | Home
+{% endblock %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="/static/indexstyle.css">
+{% endblock %}
+
+{% block main %}
+<main>
+
+<section id="welcome-page">
+    <div id="welcome">
+        <h3 id="welcome_name">Welcome to Hi Message <span>{{ user }}</span> !</h3>
+    </div>
+    <h3 id = "messages_count" class="text-center">You have {{ messages[0]["COUNT(message)"] }} messages</h3>
+</div>
+
+</section>
+<section id="users">
+        <h3 class="users text-center">Current Users</h3>
+        <div class="table-wrapper">
+            <table class="fl-table">
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Username</th>
+                    </tr>
+                </thead>
+                    <tbody>
+                        {% for user in users %}
+                            <tr>
+                                <td>{{ user["id"]}}</td>
+                                <td>{{ user["username"]}}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+</section>
+
+
+</section>
+</main>
+{% endblock %}
+
+
